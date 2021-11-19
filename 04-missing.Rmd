@@ -37,6 +37,6 @@ From the plot, we see that the data is quite complete, with complete data being 
 
 There is no significant pattern on correlations between features (survey questions) with missing answers. 
 
-Looking at percentage of rows missing, we find that more abstract questions related to COVID tend to have more missing answers. For example, covid_countryfaith, which means whether the respondent thinks the country has more or less religious faith after the COVID outbreak, has more missing answers than most. Questions like economic situation (econ_sit) and how COVID affects family bond (covid_family), which are less abstract, have fewer missing answers. This pattern is reasonable.
+Looking at percentage of rows missing, we find that the more abstract questions related to COVID tend to have more missing answers. For example, covid_countryfaith, which means whether the respondent thinks the country has more or less religious faith after the COVID outbreak, has more missing answers than most. Questions like economic situation (econ_sit) and how COVID affects family bond (covid_family), which are less abstract, have fewer missing answers. This pattern is reasonable.
 
 
