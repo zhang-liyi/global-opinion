@@ -1,1 +1,42 @@
 # Missing values
+
+We select 14 few survey questions. Each question is a multiple choice question with choices: I don't know or refuse to answer. We identify these choices as missing data and plot and analyze the missing data pattern.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=12) 
+```
+
+Now we plot missing data.
+
+```{r}
+source("plot_missing.R")
+library(haven) # reads .sav file
+
+# Read data and select a portion of it
+dataset <- read_sav('dataset.sav')
+selected_data <- dataset[,c(6:16,22,23,84)]
+num_col <- dim(selected_data)[2]
+num_row <- dim(selected_data)[1]
+
+# Identify missing data
+# 8 & 9 stand for missing data in this context
+for(c in 1:num_col){
+  idx <- which(selected_data[,c]==9 | selected_data[,c]==8)
+  selected_data[idx, c] <- NA
+}
+
+# Select a sub-sample for plotting
+samp <- sample(1:num_row, 300)
+selected_data <- selected_data[samp,]
+
+# Plot
+plot_missing(selected_data, percent = TRUE)
+```
+
+From the plot, we see that the data is quite complete, with complete data being by far the most common pattern, and the survey question with largest missing rate has only about 10% answers missing. 
+
+There is no significant pattern on correlations between features (survey questions) with missing answers. 
+
+Looking at percentage of rows missing, we find that more abstract questions related to COVID tend to have more missing answers. For example, covid_countryfaith, which means whether the respondent thinks the country has more or less religious faith after the COVID outbreak, has more missing answers than most. Questions like economic situation (econ_sit) and how COVID affects family bond (covid_family), which are less abstract, have fewer missing answers. This pattern is reasonable.
+
+
