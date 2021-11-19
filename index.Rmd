@@ -1,6 +1,6 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAMES HERE"
+title: "Factors Behind Global Opinions"
+author: "Xingyu Wei, Liyi Zhang"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
