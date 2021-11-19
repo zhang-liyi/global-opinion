@@ -58,8 +58,7 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
       ylab('num rows \n missing:')+
       labs(x = "")+
       ggtitle('Missing value patterns')+
-      theme_bw()+
-      theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
+      theme_bw()
     
     p3<-ggplot(missing_patterns,aes(x = nrow(missing_patterns):1,y = count,fill = ToHighlight)) +
       geom_col()+
@@ -81,8 +80,7 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
       scale_y_continuous(limits=c(0,100))+
       labs(x = "")+
       ggtitle('Missing value patterns')+
-      theme_bw()+
-      theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
+      theme_bw()
     missing_patterns3 = missing_patterns
     missing_patterns3['count']<-missing_patterns3['count']/n*100
     p3<-ggplot(missing_patterns3,aes(x = nrow(missing_patterns3):1,y = count,fill = ToHighlight)) +
@@ -99,7 +97,6 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
   
   if(x_vert){
     p2 <- p2 + theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
-    p3 <- p3 + theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
   }
   
   

@@ -30,7 +30,7 @@ samp <- sample(1:num_row, 300)
 selected_data <- selected_data[samp,]
 
 # Plot
-plot_missing(selected_data, percent = TRUE)
+plot_missing(selected_data, percent=TRUE, x_vert=TRUE)
 ```
 
 From the plot, we see that the data is quite complete, with complete data being by far the most common pattern, and the survey question with largest missing rate has only about 10% answers missing. 
