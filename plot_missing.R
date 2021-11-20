@@ -1,16 +1,13 @@
-plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
+plot_missing <- function(data, percent=FALSE, x_vert=FALSE) {
   library(tidyverse)
   library(patchwork)
   library(ggplot2)
   
-  missing_patterns <- data.frame(is.na(df)) %>%
+  missing_patterns <- data.frame(is.na(data)) %>%
     group_by_all() %>%
     count(name = "count", sort = TRUE) %>%
     ungroup()
-  
-  
   num_col = ncol(missing_patterns)
-  
   tidypatterns <- missing_patterns[,1:num_col-1] %>%
     rownames_to_column("id") %>%
     gather(key, value, -id)
@@ -26,9 +23,20 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
   missing_patterns2 <- missing_patterns2 %>%
     mutate( ToHighlight = ifelse(rowSums(.)==0, "TRUE", "FALSE" ) )
   missing_patterns['ToHighlight'] = missing_patterns2['ToHighlight']
+  tidypatterns2 <- tidypatterns
+  tidypatterns2$id <- sprintf("%02d", as.numeric(as.character(tidypatterns$id)))
   
-  p1<-tidypatterns %>%
-    mutate(key = fct_reorder(key,-value,.fun='sum')) %>%
+  a = levels(fct_reorder(tidypatterns$key,-tidypatterns$value,.fun='sum'))
+  b = colSums(is.na(data))
+  reorder_idx <- match(a,names(b))
+  rows = b[reorder_idx]
+  key = names(rows)
+  df <- data.frame(key,rows)
+  rownames(df) <- 1:nrow(df)
+  df2<- merge(tidypatterns2,df,by='key')
+  
+  p1<-df2%>%
+    mutate(key = fct_reorder(key,-rows)) %>%
     ggplot(aes(x = key,y = fct_rev(id), fill = color))+
     geom_tile(color = "white") +
     scale_fill_manual(values = c('0'="purple",'1'="light grey",'2'="dark grey"))+
@@ -37,23 +45,16 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
     ylab('missing pattern')+
     guides(fill=FALSE, color=FALSE)+
     theme_bw()+
-    #new_scale_color() +
     annotate("text",x =ncol(missing_patterns)/2 ,y = nrow(missing_patterns)-complete_row+1,label = "complete cases")
+  
   
   if(x_vert){
     p1 <- p1 + theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
   }
   
-  a = levels(fct_reorder(tidypatterns$key,-tidypatterns$value,.fun='sum'))
-  b = colSums(is.na(df))
-  reorder_idx <- match(a,names(b))
-  value = b[reorder_idx]
-  key = names(value)
-  df2 <- data.frame(key,value)
-  rownames(df2) <- 1:nrow(df2)
   
   if (percent == FALSE){
-    p2<-ggplot(df2,aes(x = reorder(key,-value),y = value)) +
+    p2<-ggplot(df,aes(x = reorder(key,-rows),y = rows)) +
       geom_col(fill = "lightblue")+
       ylab('num rows \n missing:')+
       labs(x = "")+
@@ -71,10 +72,10 @@ plot_missing <- function(df, percent=FALSE, x_vert=FALSE) {
       guides(fill=FALSE, color=FALSE)
   }
   if (percent == TRUE){
-    n = nrow(df)
-    df2['value'] <- df2['value']/n*100
+    n = nrow(data)
+    df['rows'] <- df['rows']/n*100
     
-    p2<-ggplot(df2,aes(x = reorder(key,-value),y = value)) +
+    p2<-ggplot(df,aes(x = reorder(key,-rows),y = rows)) +
       geom_col(fill = "lightblue")+
       ylab('% rows \n missing:')+
       scale_y_continuous(limits=c(0,100))+
