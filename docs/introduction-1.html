@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Data sources | PSet 4</title>
-  <meta name="description" content="Chapter 2 Data sources | PSet 4" />
+  <title>Chapter 2 Introduction | PSet 4</title>
+  <meta name="description" content="Chapter 2 Introduction | PSet 4" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Data sources | PSet 4" />
+  <meta property="og:title" content="Chapter 2 Introduction | PSet 4" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Data sources | PSet 4" />
+  <meta name="twitter:title" content="Chapter 2 Introduction | PSet 4" />
   
   
   
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="data-transformation.html"/>
+<link rel="next" href="data-sources.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -138,17 +138,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
+<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Data sources</a></li>
+<li class="chapter" data-level="4" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>4</b> Data transformation</a></li>
+<li class="chapter" data-level="5" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>5</b> Missing values</a></li>
+<li class="chapter" data-level="6" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>6</b> Results</a></li>
+<li class="chapter" data-level="7" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>7</b> Interactive component</a></li>
+<li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="conclusion.html"><a href="conclusion.html#mycars-missing-patterns"><i class="fa fa-check"></i><b>7.0.1</b> 1. <code>mycars</code> missing patterns</a></li>
-<li class="chapter" data-level="7.0.2" data-path="conclusion.html"><a href="conclusion.html#missing-value-plot-function"><i class="fa fa-check"></i><b>7.0.2</b> 2. Missing value plot function</a></li>
-<li class="chapter" data-level="7.0.3" data-path="conclusion.html"><a href="conclusion.html#setup-your-github-final-project-repo"><i class="fa fa-check"></i><b>7.0.3</b> 3. Setup your GitHub final project repo</a></li>
-<li class="chapter" data-level="7.0.4" data-path="conclusion.html"><a href="conclusion.html#missing-values-chapter"><i class="fa fa-check"></i><b>7.0.4</b> 4. Missing values chapter</a></li>
+<li class="chapter" data-level="8.0.1" data-path="conclusion.html"><a href="conclusion.html#mycars-missing-patterns"><i class="fa fa-check"></i><b>8.0.1</b> 1. <code>mycars</code> missing patterns</a></li>
+<li class="chapter" data-level="8.0.2" data-path="conclusion.html"><a href="conclusion.html#missing-value-plot-function"><i class="fa fa-check"></i><b>8.0.2</b> 2. Missing value plot function</a></li>
+<li class="chapter" data-level="8.0.3" data-path="conclusion.html"><a href="conclusion.html#setup-your-github-final-project-repo"><i class="fa fa-check"></i><b>8.0.3</b> 3. Setup your GitHub final project repo</a></li>
+<li class="chapter" data-level="8.0.4" data-path="conclusion.html"><a href="conclusion.html#missing-values-chapter"><i class="fa fa-check"></i><b>8.0.4</b> 4. Missing values chapter</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -169,12 +170,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-sources" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Data sources</h1>
-<p>Our dataset is survey data provided by Pew Research Center. Its website contains a <a href="www.pewresearch.org/global/datasets/">global research datasets section</a>, and it is from here that we draw multiple years’ survey data.</p>
-<p>The survey is conducted across advanced economies, with questions focusing on global attitudes. Typical questions include opinion towards particular countries, towards own country’s economy, and towards concepts such as globalization. Dataset from year 2020 particularly contains question on Covid-19, such as how much covid affected one’s life in general.</p>
-<p>The questions consist mainly of multiple choices, and it is only multiple choices that we use in our project. The survey is conducted on over 10,000 individuals.</p>
-<p>The survey is conducted by Pew Research Center, following general international survey methodologies that are also specified in detail in their <a href="https://www.pewresearch.org/methodology/international-survey-research/international-methodology/all-survey/all-country/all-year">official website</a>.</p>
+<div id="introduction-1" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<p>Covid-19 significantly impacts world politics, and China has become an increasingly prominent player on the world stage. This project studies major factors that influence global attitudes toward China, and examines the ways these factors interact with each other. It is clear that global public opinions toward China dropped significantly as measured before and after covid. We investigate how covid’s effect on individuals and factors other than covid interact to influence opinions toward China. Specifically, we discover that the impact of factors differ when applied to individuals or countries. Economic situation, how much covid impact livelihood, and perception on how China handled covid are significant in influencing individual opinions. However, only perception on how China handled covid correlates whether a country overall tends more to favor or disfavor China.</p>
+<p>We draw inspirations from a similar study conducted by the Pew Research Center: <a href="https://www.pewresearch.org/global/2020/10/06/unfavorable-views-of-china-reach-historic-highs-in-many-countries/">Unfavorable Views of China Reach Historic Highs in Many Countries</a>. Both studies identify factors connected with increasingly negative views towards China. However, our study differs by analyzing factors on an individual level, whereas the original study analyzes national trends. Additionally, our study features interactions among three or more variables that are absent in the original study.</p>
 
 </div>
             </section>
@@ -183,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-transformation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-sources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -214,7 +213,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/zhang-liyi/global-opinion/edit/main/02-data.Rmd",
+"link": "https://github.com/zhang-liyi/global-opinion/edit/main/01-introduction.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -222,7 +221,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/zhang-liyi/global-opinion/blob/main/02-data.Rmd",
+"link": "https://github.com/zhang-liyi/global-opinion/blob/main/01-introduction.Rmd",
 "text": null
 },
 "download": null,

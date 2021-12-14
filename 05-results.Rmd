@@ -1,12 +1,12 @@
 # Results
 
-(Some of the code will eventually be put in other sections)
-
+We first analyze data on an individual basis, differently from the nation-wide approach of the original study.
 
 ```{r}
 library(haven)
 library(tidyverse)
 library(ggmosaic)
+library(vcd)
 library(ggalluvial)
 library(patchwork)
 library(Lock5withR)
@@ -114,25 +114,19 @@ All the three subgraphs are consistent with what we intuitively expected. People
 ```{r}
 df <- drop_na_custom(dataset,c(5,6,13,16))
 df <- df %>%
-  mutate(fav_China_discrete = droplevels(fct_rev(as_factor(fav_China))),
+  mutate(fav_China_discrete = droplevels(as_factor(fav_China)),
          covid_change_discrete = droplevels(as_factor(covid_change)),
-         econ_sit_discrete = droplevels(as_factor(econ_sit)))
-g6 <- ggplot(df) +
-  geom_mosaic(aes(weight=weight,
-                  x=product(fav_China_discrete, econ_sit_discrete, covid_change_discrete),
-                  fill=fav_China_discrete)) +
-  labs(title='')+
-  theme(legend.position="none")+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-g6
-
-library(vcd)
-vcd::mosaic(fct_rev(fav_China_discrete) ~ covid_change_discrete+econ_sit_discrete, df,
+          econ_sit_discrete = droplevels(as_factor(econ_sit)))
+  
+vcd::mosaic(fav_China_discrete ~ covid_change_discrete+econ_sit_discrete,data=df,
             direction=c('v','v','h'),
-            highlighting_fill=c('lightblue','blue','grey','black'))
+            highlighting_fill=c('lightblue','blue','light grey','dark grey'),
+            spacing = spacing_equal(sp = unit(0, "lines")),
+       labeling = labeling_border(rot_labels = c(0, 45, 90, 45),
+                                  set_varnames = c(covid_change_discrete = "how much affected by covid", fav_China_discrete= "Opinions on China",econ_sit_discrete="Economic Situation")))
 ```
 
-From the graph, the horizontal line separating positive opinions and negative opinions goes down as the effect on people's life decreases. Hence, we can conclude that people who are not affected by the covid at all are much likely to have unfavorable opinions on China than any other group. Moreover, the vertical line separating good economic situations and bad economic situations moves to the right as opinions on China becomes better, which suggests that among people who have bad views of China people in bad economic conditions make up a much larger proportion. Besides, the purple region proportion decreases from left to right, indicating that people in bad economic conditions are likely to be greatly affected by the covid.
+From the graph, the percentage of very unfavorable opinions are extremely high in the "very bad" economic situation category for all four "affected by covid" groups. This indicates that people in bad condition are much more likely to have highly unfavorable opinions on China no matter how the covid changed their life. Also, for people in good economic situations but greatly affected by the Covid-19, they also tend to hate China. The results of opinions for all four "affected by covid" groups are very similar except for people who are both in very good economic situations and not affected by the covid, which is the first column in the "not at all" group. People in this group have significantly better views of China. This is consistent with our conjecture that the Covid-19 may account for the highly increase of negative opinions on China.
 
 Next, we study whether the factors studied above apply across countries. That is, for factors significant on an individual-level, we ask whether these factors can indicate a country's overall opinion towards China. We find that it is not always true.
 

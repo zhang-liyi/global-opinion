@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Interactive</title>
+		<script src="https://d3js.org/d3.v7.js"></script>  <!-- link to D3 library -->
+
+
+	</head>
+
+	<body>
+    <h1>Interactive</h1>
+    <p>Click on the botton to show a country's percentage of people unfavorable towards China in a given year. The countries are: Canada, USA, UK, Italy, Japan, Australia.</p>
+    <p><button type="button" onclick="f2016()">2016</button>
+		<button type="button" onclick="f2017()">2017</button>
+		<button type="button" onclick="f2018()">2018</button>
+    <button type="button" onclick="f2019()">2019</button>
+    <button type="button" onclick="f2020()">2020</button></p>
+    
+		<svg width="1000" height="800">
+		  <image 
+      width="100%" 
+      height="100%" 
+      xlink:href="worldmap.png" 
+      />
+		</svg>
+		<script>
+		d3.select('svg').selectAll('image').attr("cx", "0").attr("cy", "0");
+		function f2020() {
+		  d3.select("svg").selectAll("circle").remove();
+		  // Australia
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "480").attr("r", "27").attr("fill", "red").style("opacity", 0.3);
+      // Japan
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "250").attr("r", "28.7").attr("fill", "red").style("opacity", 0.3);
+      // UK
+      d3.select("svg").append("circle").attr("cx", "400")
+    .attr("cy", "205").attr("r", "24.7").attr("fill", "red").style("opacity", 0.3);
+      // Italy
+      d3.select("svg").append("circle").attr("cx", "440")
+    .attr("cy", "245").attr("r", "20.7").attr("fill", "red").style("opacity", 0.3);
+      // USA
+      d3.select("svg").append("circle").attr("cx", "120")
+    .attr("cy", "260").attr("r", "24.3").attr("fill", "red").style("opacity", 0.3);
+      // Canada
+      d3.select("svg").append("circle").attr("cx", "150")
+    .attr("cy", "185").attr("r", "24.3").attr("fill", "red").style("opacity", 0.3);
+    }
+      
+    function f2019() {
+      d3.select("svg").selectAll("circle").remove();
+      // Australia
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "480").attr("r", "19").attr("fill", "red").style("opacity", 0.3);
+      // Japan
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "250").attr("r", "28.3").attr("fill", "red").style("opacity", 0.3);
+      // UK
+      d3.select("svg").append("circle").attr("cx", "400")
+    .attr("cy", "205").attr("r", "18.3").attr("fill", "red").style("opacity", 0.3);
+      // Italy
+      d3.select("svg").append("circle").attr("cx", "440")
+    .attr("cy", "245").attr("r", "19").attr("fill", "red").style("opacity", 0.3);
+      // USA
+      d3.select("svg").append("circle").attr("cx", "120")
+    .attr("cy", "260").attr("r", "20").attr("fill", "red").style("opacity", 0.3);
+      // Canada
+      d3.select("svg").append("circle").attr("cx", "150")
+    .attr("cy", "185").attr("r", "22.3").attr("fill", "red").style("opacity", 0.3);
+    }  
+    
+    function f2018() {
+      d3.select("svg").selectAll("circle").remove();
+      // Australia
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "480").attr("r", "15.7").attr("fill", "red").style("opacity", 0.3);
+      // Japan
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "250").attr("r", "26").attr("fill", "red").style("opacity", 0.3);
+      // UK
+      d3.select("svg").append("circle").attr("cx", "400")
+    .attr("cy", "205").attr("r", "11.7").attr("fill", "red").style("opacity", 0.3);
+      // Italy
+      d3.select("svg").append("circle").attr("cx", "440")
+    .attr("cy", "245").attr("r", "20").attr("fill", "red").style("opacity", 0.3);
+      // USA
+      d3.select("svg").append("circle").attr("cx", "120")
+    .attr("cy", "260").attr("r", "15.7").attr("fill", "red").style("opacity", 0.3);
+      // Canada
+      d3.select("svg").append("circle").attr("cx", "150")
+    .attr("cy", "185").attr("r", "15").attr("fill", "red").style("opacity", 0.3);
+    }
+    
+    function f2017() {
+      d3.select("svg").selectAll("circle").remove();
+      // Australia
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "480").attr("r", "10.7").attr("fill", "red").style("opacity", 0.3);
+      // Japan
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "250").attr("r", "27.7").attr("fill", "red").style("opacity", 0.3);
+      // UK
+      d3.select("svg").append("circle").attr("cx", "400")
+    .attr("cy", "205").attr("r", "12.3").attr("fill", "red").style("opacity", 0.3);
+      // Italy
+      d3.select("svg").append("circle").attr("cx", "440")
+    .attr("cy", "245").attr("r", "19.7").attr("fill", "red").style("opacity", 0.3);
+      // USA
+      d3.select("svg").append("circle").attr("cx", "120")
+    .attr("cy", "260").attr("r", "15.7").attr("fill", "red").style("opacity", 0.3);
+      // Canada
+      d3.select("svg").append("circle").attr("cx", "150")
+    .attr("cy", "185").attr("r", "13.3").attr("fill", "red").style("opacity", 0.3);
+    }
+    
+    function f2016() {
+      d3.select("svg").selectAll("circle").remove();
+      // Australia
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "480").attr("r", "13").attr("fill", "red").style("opacity", 0.3);
+      // Japan
+      d3.select("svg").append("circle").attr("cx", "800")
+    .attr("cy", "250").attr("r", "28.7").attr("fill", "red").style("opacity", 0.3);
+      // UK
+      d3.select("svg").append("circle").attr("cx", "400")
+    .attr("cy", "205").attr("r", "14.7").attr("fill", "red").style("opacity", 0.3);
+      // Italy
+      d3.select("svg").append("circle").attr("cx", "440")
+    .attr("cy", "245").attr("r", "20.3").attr("fill", "red").style("opacity", 0.3);
+      // USA
+      d3.select("svg").append("circle").attr("cx", "120")
+    .attr("cy", "260").attr("r", "18.3").attr("fill", "red").style("opacity", 0.3);
+      // Canada
+      d3.select("svg").append("circle").attr("cx", "150")
+    .attr("cy", "185").attr("r", "13.3").attr("fill", "red").style("opacity", 0.3);
+    }
+    
+    </script>
+	</body>
+
+</html>

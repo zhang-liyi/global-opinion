@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Data transformation | Factors Behind Global Opinions</title>
-  <meta name="description" content="Chapter 3 Data transformation | Factors Behind Global Opinions" />
+  <title>Chapter 3 Data transformation | PSet 4</title>
+  <meta name="description" content="Chapter 3 Data transformation | PSet 4" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Data transformation | Factors Behind Global Opinions" />
+  <meta property="og:title" content="Chapter 3 Data transformation | PSet 4" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Data transformation | Factors Behind Global Opinions" />
+  <meta name="twitter:title" content="Chapter 3 Data transformation | PSet 4" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Xingyu Wei, Liyi Zhang" />
 
 
-<meta name="date" content="2021-11-19" />
+<meta name="date" content="2021-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -79,7 +143,13 @@
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="conclusion.html"><a href="conclusion.html#mycars-missing-patterns"><i class="fa fa-check"></i><b>7.0.1</b> 1. <code>mycars</code> missing patterns</a></li>
+<li class="chapter" data-level="7.0.2" data-path="conclusion.html"><a href="conclusion.html#missing-value-plot-function"><i class="fa fa-check"></i><b>7.0.2</b> 2. Missing value plot function</a></li>
+<li class="chapter" data-level="7.0.3" data-path="conclusion.html"><a href="conclusion.html#setup-your-github-final-project-repo"><i class="fa fa-check"></i><b>7.0.3</b> 3. Setup your GitHub final project repo</a></li>
+<li class="chapter" data-level="7.0.4" data-path="conclusion.html"><a href="conclusion.html#missing-values-chapter"><i class="fa fa-check"></i><b>7.0.4</b> 4. Missing values chapter</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -91,7 +161,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Factors Behind Global Opinions</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSet 4</a>
           </h1>
         </div>
 
@@ -101,6 +171,26 @@
             <section class="normal" id="section-">
 <div id="data-transformation" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Data transformation</h1>
+<p>The data is a .sav file, and data transformation is quite simple once the datasets are downloaded and put in the same folder. It is also necessary to install the package <code>haven</code> to read .sav file.</p>
+<p>We can take a peek at the dataset:</p>
+<pre><code>## # A tibble: 6 × 226
+##          ID                 survey  country phone_sample weight covid_change covid_ownfaith
+##       &lt;dbl&gt;              &lt;dbl+lbl&gt; &lt;dbl+lb&gt;    &lt;dbl+lbl&gt;  &lt;dbl&gt;    &lt;dbl+lbl&gt;      &lt;dbl+lbl&gt;
+## 1 481001184 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.804 4 [Not at a… 1 [Stronger]  
+## 2 481001208 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.294 1 [A great … 3 [Has not ch…
+## 3 481001226 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.589 1 [A great … 3 [Has not ch…
+## 4 481001242 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.294 2 [A fair a… 1 [Stronger]  
+## 5 481001446 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.418 2 [A fair a… 3 [Has not ch…
+## 6 481000348 1202006 [Summer, 2020] 14 [Uni… 1 [Landline]  0.860 4 [Not at a… 3 [Has not ch…
+## # … with 219 more variables: covid_countryfaith &lt;dbl+lbl&gt;, covid_family &lt;dbl+lbl&gt;,
+## #   covid_united &lt;dbl+lbl&gt;, covid_cooperation &lt;dbl+lbl&gt;, trust_people &lt;dbl+lbl&gt;,
+## #   econ_sit &lt;dbl+lbl&gt;, improve_econ &lt;dbl+lbl&gt;, fav_US &lt;dbl+lbl&gt;, fav_China &lt;dbl+lbl&gt;,
+## #   fav_Russia &lt;dbl+lbl&gt;, fav_eu &lt;dbl+lbl&gt;, fav_un &lt;dbl+lbl&gt;, fav_Iran &lt;dbl+lbl&gt;,
+## #   fav_NATO &lt;dbl+lbl&gt;, COVID_US &lt;dbl+lbl&gt;, covid_china &lt;dbl+lbl&gt;,
+## #   covid_country &lt;dbl+lbl&gt;, covid_EU &lt;dbl+lbl&gt;, covid_WHO &lt;dbl+lbl&gt;,
+## #   PARTYFAV_AUSTRALIA_GREENS &lt;dbl+lbl&gt;, PARTYFAV_AUSTRALIA_LABOUR &lt;dbl+lbl&gt;, …</code></pre>
+<p>Each row is an individual response. To the individual is attached country, and answers to a number of multiple choice questions. Notice that there is also a <code>weight</code> column. Intructions from the source specify that answers must be weighted when used to compute the sum or mean response.</p>
+<p>There is more nuanced, task-specific data transformation needed for different plots and tasks, which we introduce later. A general guideline for the data transformation codes later is that, one can use the <code>mutate</code> and <code>as_factor</code> function to create discrete versions of columns convenient for plotting. In particular, <code>as_factor</code> allows one to utilize the special &lt;dbl+lbl&gt; format of columns and allow graphs to output interpretable labels.</p>
 
 </div>
             </section>
