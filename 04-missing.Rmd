@@ -2,6 +2,10 @@
 
 We select 14 survey questions. Each question is a multiple choice question with choices: I don't know or refuse to answer. We identify these choices as missing data and plot and analyze the missing data pattern.
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=12) 
+```
+
 Now we plot missing data.
 
 ```{r}
