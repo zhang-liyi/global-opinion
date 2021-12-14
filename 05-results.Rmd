@@ -179,7 +179,7 @@ ggplot(data=df_new)+
   ylab("unfavorable opinion rate")
 ```
 
-As shown in the graph, the majorities of all the nine countries have negative views of China, and the unfavorable opinions toward China has increased in recent years.
+As shown in the graph, the majorities of the nine countries with data available from 2015 have negative views of China, and the unfavorable opinions toward China has increased in recent years.
 
 We then analyze factors on an individual basis, differently from the nation-wide approach of the original study.
 
