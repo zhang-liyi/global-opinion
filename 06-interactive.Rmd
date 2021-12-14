@@ -2,7 +2,7 @@
 
 The map provides a holistic view of percent of unfavorable opinion towards China across many countries. Viewing the opinions change on the move shows that 2020 features a particularly large increase. This further suggests the impact of Covid on global opinion towards China. 
 
-For some reason, `iframe` cannot output the map, a problem we haven't yet solved. To view the map, one can open and view the .html file itself, which should give correct outputs.
+For some reason, `iframe` cannot output the map, a problem we haven't yet solved. To view the map, one can open and view the interactive.html file itself, which should give correct outputs.
 
 <iframe src="interactive.html" width="1200" height="800"></iframe>
 
