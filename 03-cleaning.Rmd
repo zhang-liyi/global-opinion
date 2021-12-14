@@ -1,1 +1,19 @@
 # Data transformation
+
+The data is a .sav file, and data transformation is quite simple once the datasets are downloaded and put in the same folder. It is also necessary to install the package `haven` to read .sav file.
+
+```{r}
+library(haven)
+
+dataset <- read_sav('dataset.sav')
+```
+
+We can take a peek at the dataset:
+
+```{r}
+head(dataset)
+```
+
+Each row is an individual response. To the individual is attached country, and answers to a number of multiple choice questions. Notice that there is also a `weight` column. Intructions from the source specify that answers must be weighted when used to compute the sum or mean response.
+
+There is more nuanced, task-specific data transformation needed for different plots and tasks, which we introduce later. A general guideline for the data transformation codes later is that, one can use the `mutate` and `as_factor` function to create discrete versions of columns convenient for plotting. In particular, `as_factor` allows one to utilize the special <dbl+lbl> format of columns and allow graphs to output interpretable labels.

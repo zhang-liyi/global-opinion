@@ -1,2 +1,9 @@
 # Data sources
 
+Our dataset is survey data provided by Pew Research Center. Its website contains a [global research datasets section](www.pewresearch.org/global/datasets/), and it is from here that we draw multiple years' survey data. 
+
+The survey is conducted across advanced economies, with questions focusing on global attitudes. Typical questions include opinion towards particular countries, towards own country's economy, and towards concepts such as globalization. Dataset from year 2020 particularly contains question on Covid-19, such as how much covid affected one's life in general. 
+
+The questions consist mainly of multiple choices, and it is only multiple choices that we use in our project. The survey is conducted on over 10,000 individuals.
+
+The survey is conducted by Pew Research Center, following general international survey methodologies that are also specified in detail in their [official website](https://www.pewresearch.org/methodology/international-survey-research/international-methodology/all-survey/all-country/all-year). 
