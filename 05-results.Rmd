@@ -2,9 +2,6 @@
 
 (Some of the code will eventually be put in other sections)
 
-```{r setup, include=FALSE}
-# knitr::opts_chunk$set(fig.width=8, fig.height=12) 
-```
 
 ```{r}
 library(haven)
